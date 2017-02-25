@@ -1,0 +1,271 @@
+
+<!-- saved from url=(0111)https://www.simplycoding.org/course%20materials/Intro%20to%20Websites/Lesson%201/1.4%20-%20HTML%20Examples.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link type="text/css" rel="stylesheet" href="./projects.css">
+	<link type="text/css" rel="stylesheet" href="./projects.css">
+	<script src="./run-the-code.js.download"></script>
+	<script src="./javascript.js.download"></script>
+	
+	<script>
+         function toggle_visibility(id) {
+            var e = document.getElementById(id);
+        if(e.style.display == 'table'){
+             e.style.display = 'none';
+        }else{
+            e.style.display = 'table';
+            e.style.border = '1px solid black';
+            e.style.padding = '10px';
+            e.style.marginTop = '10px';
+            e.style.marginLeft = '10px';
+            e.style.marginRight = '10px';
+            //e.style.marginBottom = '5px';
+            }
+        }
+
+  window.onbeforeunload = function () {
+  	window.scrollTo(0, 0);
+	}
+
+function nextLesson(){
+	parent.scrollTo(0,200);
+	parent.document.getElementsByClassName('right-arrow')[0].click();
+}
+
+        
+	</script>
+	<style>
+
+	.padding{
+		padding-left:1em;
+	}
+	</style>
+
+	<style type="text/css">
+	.lft{
+		width:49%;
+	}
+	.rt{
+		width:49%;
+		float: right;
+	}
+
+
+			 ol { counter-reset: item; }
+        ol li.steps { display: block; }
+        ol li.steps:before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            color: blue;
+        }
+
+	</style>
+
+	<title>Project 1</title>
+
+
+<link type="text/css" rel="stylesheet" href="./codemirror.min.css"><script src="./require.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./jquery.min.js(1).download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/codemirror" src="./codemirror.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/htmlmixed/htmlmixed.min" src="./htmlmixed.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/javascript/javascript.min" src="./javascript.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/python/python.min" src="./python.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/clike/clike.min" src="./clike.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/swift/swift.min" src="./swift.min.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/xml/xml" src="./xml.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/javascript/javascript" src="./javascript.js(1).download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codemirror/mode/css/css" src="./css.js.download"></script><link type="text/css" rel="stylesheet" href="./monokai.min.css"><link type="text/css" rel="stylesheet" href="./monokai.min.css"></head>
+
+<body id="body" onload="parent.scrollTo(0,200);">
+	<h1 class="title">1 HTML ELEMENTS</h1>
+	<h2 class="topic">1.4 Whats an HTML Tag 
+	</h2>
+
+	<p class="nblock">
+		Learning <b>HTML</b> means understanding how the different tags will effect, or manipulate, text.<br>
+		No one memorizes all the available <b>HTML tags</b>, that's what google is for. <br><br>
+		You just need to understand how <b>HTML</b> gets displayed and <b>parent - child</b> relationships (I know that sounds weird).<br>
+	<br>
+	First off, <b>HTML</b> doesn't try to trick you.<br>
+	  They do their best to be self-explanitory.<br><br>
+		For example, <b>Look at the code below</b>. <br>
+		What do you think &lt;<span class="brown">center</span>&gt; tags do? - <b>Click on it to find out.</b>
+	</p>
+
+	<span class="clickable lblock" style="cursor: pointer;" onclick="toggle_visibility(&#39;h1&#39;);"><span class="brown">&lt;center&gt;</span><span class="black">How will I be displayed in a web page</span><span class="brown">&lt;/center&gt;</span></span>
+		<span class="hide" id="h1" style="width:95%;">
+			<center><span class="black">How will I get displayed in a web page</span></center><br>
+			Text between <b>center tags</b> will become <b class="black">centered</b> on a website.  Easy, right!
+		</span>
+		<br><br>
+		<div class="lblock">
+	<hr class="hrline">
+</div>
+
+		<h3 class="topic">Displaying HTML</h3>
+	<p class="nblock">
+		The Browser reads <b>HTML</b> code from the top to bottom.<br>
+		Whatever gets coded first (top) will be displayed ABOVE the tags coded beneath (bottom).<br><br>
+		Lets try a simple <b>activity</b> to show you what we mean!<br>
+		<b>Follow the instructions</b> on the left! Use the <b>editor</b> to the right!
+	</p>
+<br>
+
+	<div class="rside">
+
+<div class="run-the-code-editor" style="border: 2px solid yellow; position: relative"><textarea class="run-the-code" data-mode="html" data-height="330" data-output="220px" style="display: none;">&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt; My Website &lt;/title&gt; 
+ &lt;/head&gt;
+ &lt;body style="border:5px double blue;padding:10px"&gt;
+	&lt;center&gt;I love the Utah Jazz&lt;/center&gt;
+	&lt;p&gt;One day they will win a Championship, long live John Stockton&lt;/p&gt;
+	&lt;div&gt;A man went fishing with Annette.&lt;/div&gt;
+	&lt;center&gt;&lt;small&gt;Peaches&lt;/small&gt;&lt;/center&gt;
+	&lt;small&gt;They are the Best!&lt;/small&gt;
+	&lt;footer&gt;The End&lt;/footer&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</textarea><div class="CodeMirror cm-s-monokai CodeMirror-wrap" style="height: 330px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 392px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -17px; border-right-width: 13px; min-height: 392px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 16px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">title</span><span class="cm-tag cm-bracket">&gt;</span> My Website <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">title</span><span class="cm-tag cm-bracket">&gt;</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">body</span> <span class="cm-attribute">style</span>=<span class="cm-string">"border:5px double blue;padding:10px"</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">center</span><span class="cm-tag cm-bracket">&gt;</span>I love the Utah Jazz<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">center</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>One day they will win a Championship, long live John Stockton<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>A man went fishing with Annette.<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">center</span><span class="cm-tag cm-bracket">&gt;&lt;</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;</span>Peaches<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;&lt;/</span><span class="cm-tag">center</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;</span>They are the Best!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">small</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">footer</span><span class="cm-tag cm-bracket">&gt;</span>The End<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">footer</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 392px;"></div><div class="CodeMirror-gutters" style="height: 405px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div><button style="position:absolute; bottom: 0px;right:0; z-index: 1000">Run The Code!</button></div><div></div>
+
+</div>
+
+
+
+
+
+	<div class="lside" style="margin-left:-40px;margin-top:-19px">
+		<ol>
+			<li class="steps">Click <b>'Run the Code'</b> (bottom right), notice the order text is displayed.</li>
+			<li class="steps">
+			<b>Swap</b> the code on lines 6 &amp; 10.<br>
+			<ol type="a">
+				<li><b>Move</b> the <b>small</b> tags from line 10 to 6.</li>
+				<li><b>Move</b> the <b>center</b> tags from line 6 to 10.</li>
+			</ol>
+			Use <b>copy / paste</b> (lesson 1.3) to help.<br>
+			Click <b>'Run the Code'</b>
+			</li><br>
+			Remember, the code gets displayed in the order (top to bottom) that it's read.
+		</ol>
+
+
+	</div>
+		<br>
+<div class="cfloat"></div>
+
+<div class="lblock">
+	<hr class="hrline">
+</div>
+
+
+<p class="topic">Parent - Child Tags</p>
+	<p class="nblock">
+		If you create an <b>HTML</b> tag between an existing <b>HTML</b> tag, they have a parent - child relationship.<br>
+		That's how it works in <b>HTML</b>.
+	</p>
+
+	<div style="float:right;width:50%">
+		<small>Notice the HTML tag opens, but doesn't close until both head and body have closed.</small>
+<div class="run-the-code-editor" style="border: 2px solid yellow; position: relative"><textarea class="run-the-code" data-mode="html" data-height="160" data-output="30px" style="display: none;">&lt;html&gt;
+ &lt;head&gt;
+	1st Child of HTML tag
+ &lt;/head&gt;
+ &lt;body&gt;
+	2nd Child of the HTML tag.
+ &lt;/body&gt;
+&lt;/html&gt;
+</textarea><div class="CodeMirror cm-s-monokai CodeMirror-wrap" style="height: 160px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 184px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -17px; border-right-width: 13px; min-height: 184px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>9</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 16px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">html</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>1st Child of HTML tag</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">head</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">body</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>2nd Child of the HTML tag.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">body</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">html</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 184px;"></div><div class="CodeMirror-gutters" style="height: 197px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div><button style="position:absolute; bottom: 0px;right:0; z-index: 1000">Run The Code!</button></div><div class="run-the-code-output"><iframe style="border:none;height:30px;width:100%" src="./saved_resource.html"></iframe></div>
+	</div>
+
+		<div style="width:50%"><br><br>
+			For example, the <b>head</b> and <b>body</b> tags are both children of the main <b>html</b> tag.<br>
+			Which also means the <b>head</b> and <b>body</b> are siblings.<br><br>
+			It's important to understand this, because when you read online about <b>HTML</b> they will discuss it in this way.
+		</div>
+		<div class="cfloat"></div>
+		<p class="nblock">
+		This relationship makes it so <b>multiple HTML tags</b> can effect the same text.<br><br>
+		Make sure you notice that <b>HTML tags need to close in the reverse order that they opened.</b><br>
+		For example: (Click on the text below!)</p>
+		<br>
+		<span class="clickable" style="cursor: pointer;" onclick="toggle_visibility(&#39;h6&#39;);">
+		<span class="brown tindent">&lt;center&gt; &lt;strong&gt; &lt;u&gt; &lt;small&gt; </span>
+		<span class="black">Hello World!</span>
+		 <span class="brown">&lt;/small&gt; &lt;/u&gt; &lt;/strong&gt;&lt;/center&gt;</span>
+		</span>
+		<span class="hide" id="h6" style="width:95%">
+			<center><strong><u><i><small><span class="black">Hello World!</span></small></i></u></strong></center><br><br>
+			The text '<span class="black">Hello World</span>' is effected by Five different tags.<br>
+			The <b>center</b> tag is the parent in this example.
+		</span>
+	<p></p>
+<br>
+		<p class="nblock">
+		
+		Remember, HTML is a markup language. Any text between an opening and closing tag will be displayed based on what HTML tag(s) surround it.<br><br>
+		The best way to find out how <b>HTML</b> tags will display content on a website is to test them out!<br><br>
+		You'll be doing that very soon.  You'll have a list of HTML tags to code into your Text Editor and then see how it gets displayed in the browser!<br>
+		<br>
+		<b>Follow the steps below to get started!</b>
+	</p>
+<br>
+	<center>
+	<span style="cursor: pointer;color:#008FB2;" onclick="toggle_visibility(&#39;video&#39;);" class="clickable">
+		<span class="center" style="color:#008FB2;">Click HERE to Watch a Video Instructional Review if needed.</span>
+	</span>
+	
+		<span class="hide" id="video" style="margin-left:-14em;">
+			<p onclick="popupv(&#39;https://s3-us-west-2.amazonaws.com/simplycoding/IntroToWebsites/Lesson1.4.mp4&#39;,&#39;video&#39;);" id="bold" class="center" style="color:#008FB2;cursor: pointer;">View Video as Pop Up</p>
+                <video width="560" height="315" controls="">
+                	<source src="https://s3-us-west-2.amazonaws.com/simplycoding/IntroToWebsites/Lesson1.4.mp4" type="video/mp4">
+                </video>
+       
+	</span>
+</center>
+
+
+
+	<p class="Activity">Coding Time!</p>
+	<ol class="lactivity">
+		 <li><b>Create</b> a <b class="black">new folder</b> on your <b class="black">desktop</b>, name it whatever you'd like.</li> 
+         	<ol type="a">
+         		<li><span class="black bold">RIGHT CLICK</span> on some open space on your desktop then select <b class="black"> New Folder</b>.</li>
+         		<li> You'll be saving your coding files to this folder throughout the course.</li>
+                                          
+            </ol>
+         <li><b>Open</b> the <b class="black">text editor</b> (Sublime Text) you downloaded in Lesson 1.3. </li>
+         <li><b>Open</b> a new <b class="black">text file</b> in your text editor, click <span class="black bold">File &gt; New File</span>.</li>
+         	                      
+         <li> <b>Copy</b> the <b class="black">HTML Skeleton</b> into your new text file. Click on the Hint Below to see the HTML Skeleton.</li>
+     		<span class="tindent clickable brown" style="cursor: pointer;" onclick="toggle_visibility(&#39;h116&#39;);">HINT</span>
+   			<span class="hide" id="h116" style="display: none; border: 1px solid black; padding: 10px; margin-top: 10px; margin-left: 10px; margin-right: 10px;">	
+      			<span class="brown">&lt;html&gt;</span>
+	
+			<br>
+			<span class="oindent brown">&lt;head&gt;</span><br>
+ 	
+			 	<span class="tindent brown">&lt;title&gt; <span class="black">New Website</span> &lt;/title&gt;</span>
+			<br>
+				<span class="oindent brown">&lt;/head&gt;</span>
+			<br>
+				<span class="oindent brown">&lt;body&gt;</span>
+			<br>
+				<span class="brown tindent">&lt;marquee&gt; <span class="black">Scrolling Text</span>&lt;/marquee&gt;</span>
+			<br>
+			 	<span class="oindent brown">&lt;/body&gt;</span>
+			 <br>
+			 	<span class="brown">&lt;/html&gt;</span>
+			</span>
+
+         			
+         	<ol type="a">
+         		<li>Remember the HTML skeleton is the needed HTML tags to start a website. 
+         	</li></ol> 
+         <li><b>Save</b> your file to the <b class="black">folder</b> you created in step 1 and name it  <span class="black bold">reference.html</span>.</li>
+         <ol type="a">
+         <li>To save do <span class="black bold">CNTL + S</span> or click <b class="black">File &gt; Save</b>.</li>
+         
+         		<li>The <b class="black">.html</b> extension lets the computer know it's a file with HTML tags inside.</li>
+         	</ol>
+         
+	</ol>
+
+    <p class="nblock">
+	Next you'll learn how to view your website in the browser. Move on to Lesson 1.5.<br>
+	
+	</p>
+
+
+
+</body></html>

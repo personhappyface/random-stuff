@@ -1,0 +1,88 @@
+
+<html> 
+<head>
+<link type="text/css" rel="stylesheet" href="main.css"/>
+<title> personhappyface </title>
+<script>
+function banner(){ 
+var text = confirm("Did You Really Want to Click on My Banner?"); 
+return text; 
+}
+function answer(fish){ 
+var radio = document.getElementsByName("trivia"); 
+var selection = false; 
+var message = "";
+for( var i = 0; i < radio.length; i++) {
+if(radio[i].value == "stl" && radio[i]. checked == true) { 
+selection = true; 
+} //end if statement 
+} //end for loop
+if(selection == true) {
+message = message + "<b><p style='color:green'>Way to go!</p></b>"; 
+} else { 
+message = message + "<b><p style='color:red'>Try again my friend.</p></b>"; 
+}
+document.getElementById("response").innerHTML = message;
+
+}//end function answer
+</script>
+
+<style>
+
+</style> 
+</head> 
+<body id="background">
+<a href="https://littlealchemy.com/" onclick="return banner()">
+<header>little alchemy</header>
+</a>
+<nav>
+<ul id="navmenu">
+<a class="homeLink" href="index.html.html">Home</a>
+ </li>
+<a class="gamesLink" href="game.html">games</a>
+<a class="videosLink" href="video.html">videos</a>
+</ul> 
+</nav>
+<p class="paragraph">I like <u>minecraft.</u> and <b>minecraft is super</b> <span class="wrap-text"> cool and fun </span> to <i>play</i>.</p>
+<div class="wrap-list">
+<ol>
+<li class="listitem">I like turtles.</li>
+<li class="listitem">Because of sheeps.</li>
+<li class="listitem"> Its is funny. </li>
+</ol>
+</div>
+
+<div id="rightside">
+<div class="wrap-trivia">
+<h2> Random Stuff </h2>
+<p> Whats 2+2 </p>
+<form>
+<div id="response"></div>
+<input type="radio"name="trivia"value="llt">4<br>
+<input type="radio"name="trivia"value="stl">fish<br>
+<input type="radio"name="trivia"value="lst">12<br>
+<input type="radio"name="trivia"value="tls">stick<br>
+<input type="button" id="button"value="Click Here"onclick="answer()">
+</form>
+
+</div>
+
+</div>
+
+<div id="leftside">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HNm7HTYs-qM?list=PLnVrQgGuTfZ-C5NychEoFo_h8sBKFITxk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdzsP5pSNtR7KYF_ofVWJaH0-7i-rLkB20Ge5f9bHPP2dF9Ch5_JZzD3eP"/>
+<img scr="http://minecraftpcmobs.weebly.com/uploads/2/5/3/2/25320492/6164332.png?227"/>
+<hr>
+<center> Person <a href="http://www.pokemon.com/us/">http://www.pokemon.com/us/</center>
+<p style="color:red;">Now I'm Red.</p>
+
+<div id"clearfloat">
+<h1> Minecraft </h1>
+</div>
+
+<footer>person is cool and awesome</footer>
+</body> 
+</html>

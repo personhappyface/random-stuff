@@ -1,0 +1,121 @@
+function addScript(src, callback) {
+    var s = null;
+    if(src.match(/\.js$/i)) {
+        s = document.createElement('script');
+        s.setAttribute('src', src);
+        s.onload = callback;
+    }
+    if(src.match(/\.css$/i)) {
+        s = document.createElement('link');
+        s.setAttribute('type', 'text/css');
+        s.setAttribute('rel', 'stylesheet');
+        s.setAttribute('href', src);
+        if(callback) { callback(); }
+    }
+    if(s) {
+        document.head.appendChild(s);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    addScript('https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css');
+    addScript('https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js', function () {
+        require.config({
+            packages: [{
+                name: "codemirror",
+                location: "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2",
+                main: "codemirror/codemirror"
+            }],
+            map: {'*': {'codemirror/lib/codemirror': 'codemirror/codemirror'} },
+            paths: { jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min'}
+        });
+        require([
+            'jquery',
+            "codemirror/codemirror",
+            "codemirror/mode/htmlmixed/htmlmixed.min",
+            "codemirror/mode/javascript/javascript.min",
+            "codemirror/mode/python/python.min",
+            "codemirror/mode/clike/clike.min",
+            "codemirror/mode/swift/swift.min"
+        ], initRunTheCode);
+    });
+});
+
+function getCMMode(mode) {
+    if(mode.match(/java$/i)){
+        return 'clike';
+    }
+    if(mode.match(/html$/i)) {
+        return 'htmlmixed'
+    }
+    return mode;
+}
+
+function initRunTheCode($, CodeMirror) {
+    $("textarea.run-the-code").each(function(index, element){
+        var mode = $(element).data('mode')  || 'javascript';
+        var theme = $(element).data('theme') || 'monokai';
+        addScript('https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/theme/' + theme + '.min.css');
+
+        var btn = $("<button style='position:absolute; bottom: 0px;right:0; z-index: 1000'>Run The Code!</button>");
+        var output = $("<div></div>");
+
+        $(element).after(output).wrap("<div class='run-the-code-editor' style='border: 2px solid yellow; position: relative'></div>").after(btn);
+
+        var cm = CodeMirror.fromTextArea(element, {
+            lineNumbers: true,
+            mode: getCMMode(mode),
+            theme: theme,
+            lineWrapping: true
+        });
+        cm.setSize(null, $(element).data('height') || 100);
+
+        btn.on('click', function() {
+            output.addClass('run-the-code-output');
+            // output.css({border: '2px dotted black', borderRadius:'.5em', overflowX: 'auto',
+            //             fontFamily: 'monospace', padding: '1em', marginTop: '2px'});
+            output.html("<pre>Executing code...</pre> <img src='/files/ajax-loader.gif' />");
+            if(mode === 'javascript') {
+                output.html('<pre>Result:</pre>');
+                var log = console.log;
+                console.log = function () {
+                    var text = '';
+                    for (var i = 0; i < arguments.length; i++) {
+                        if (typeof arguments[i] === 'string') {
+                            text += arguments[i] + ' ';
+                        } else {
+                            text += JSON.stringify(arguments[i],null,'\t') + ' ';
+                        }
+                    }
+                    output.append('<pre>' + text + '</pre>');
+                };
+                try {
+                    eval(cm.getValue());
+                } catch (err) {
+                    output.append('<pre class="red">' + err + '</pre>');
+                } finally {
+                    console.log = log;
+                }
+            } else if(mode === 'html') {
+                output.html('<iframe style="border:none;height:'+$(element).data('output')+';width:100%"' +
+                            ' src="data:text/html;charset=utf-8,'+encodeURIComponent(cm.getValue())+'"></iframe>');
+            } else if(['java','python','swift'].indexOf(mode) !== -1){
+                $.ajax({url: 'https://exec-service.simplycoding.org/'+mode,
+                        method: 'POST',
+                        data: JSON.stringify({code: cm.getValue()}),
+                        contentType:"application/json; charset=utf-8"})
+                    .done(function(data){
+                        output.html('<pre>Result: \n' + data.out + '</pre>');
+                        output.append('<pre class="red">' + data.err + '</pre>');
+                    })
+                    .fail(function(){
+                        output.html('<pre class="red">Server not available</pre>');
+                    });
+            }
+            else {
+                output.html('<pre class="red">Unsupported Mode :\'(</pre>');
+            }
+        });
+
+    });
+}

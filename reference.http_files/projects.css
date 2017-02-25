@@ -1,0 +1,371 @@
+.title {
+	font-family: 'Times New Roman';
+	text-align: center;
+}
+
+.topic {
+	text-decoration: underline;
+	text-align: center;
+	color:#e8892d;
+}
+.symbol{
+	font-family: Symbol;
+}
+
+
+.oindent{
+            padding-left: 1.0em;
+        }
+.tindent{
+            padding-left:2.0em;
+        }
+.hindent{
+            padding-left: 3.0em;
+        }
+.qindent{
+            padding-left: 4.0em;
+        }
+.findent{
+			padding-left:5.0em;
+}
+.sindent{
+            padding-left:6.0em;
+        }
+.seindent{
+            padding-left:8.0em;
+        }
+.mindent{
+       padding-left: 9em;
+   }
+.ocindent{
+            padding-left:10.0em;
+        }
+.nindent{
+            padding-left:12.0em;
+        }
+
+.activity {
+	text-decoration: underline;
+	text-align: center;
+	color:#e8892d;
+	font-size:1.3em;
+}
+li{
+	line-height: 1.3;
+}
+.content {
+	text-indent: 2em;
+	font-size:1.1em;
+}
+
+.chover:hover{
+  font-size: 105%;
+ }
+
+.mblock{
+padding-left: 8em;
+}
+
+.nblock{
+	padding-left: .5em;
+	font-size: 1.1em;
+}
+
+.zblock{
+	padding-left: 40%;
+}
+.tblock{
+	padding-left: 3.0em;
+
+}
+.iblock{
+	padding-left: 2em;
+}
+.lblock{
+	padding-left: 5em;
+}
+.cblock{
+	padding-left:12em;
+}
+.xlblock {
+	padding-left: 6em;
+}
+.review {
+	text-indent: 2em;
+	text-decoration: underline;
+}
+.lactivity{
+	color:darkgreen;
+}
+li{
+	line-height: 1.7;
+}
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+.wrapup{
+	text-align: center;
+	font-weight: bold;
+}
+.lines {
+	line-height: 1.7;
+}
+
+.content {
+	text-indent: 2em;
+}
+
+#body {
+	border: 1px solid black;
+	padding:1em;
+	background-color:#ffffff;
+	color:#222;
+	font-family: sans-serif;
+	line-height: 1.3;
+}
+
+
+a:link{
+	color:#008FB2;
+}
+
+a:visited{
+	color:#008FB2;
+}
+a:active{
+	color:#008FB2;
+}
+a:hover {
+	color: #e8892d;
+}
+
+.orange:hover {
+	color: #e8892d;
+}
+
+.imagefinal {
+	height: 386px;
+	width: 622px;
+}
+
+.formimage {
+	width:300px;
+	height: 400px;
+}
+
+.popup, .video, .bold{
+	font-weight: bold;
+
+}
+.code{
+	font-weight: bold;
+	font-size: 1.05em;
+}
+
+.topc {
+	height:75px;
+	width:500px;
+}
+.twidth{
+	width:600px;
+}
+.lftwidth{
+	width:400px;
+}
+
+.rightc{
+	height:300px;
+	width:300px;
+}
+
+.bottomc{
+	height:75px;
+}
+.purple{
+	color:purple;
+}
+.red {
+	color:red;
+}
+.blue {
+	color:blue;
+}
+.green {
+	color:green;
+}
+.black{
+	color:black;
+}
+.orange{
+	color:#e8892d;
+}
+.grey, .gray{
+	color:#828282;
+}
+.clink{
+	color:#008FB2;
+}
+.four {
+	padding-left:5em;
+}
+.cwidtho{
+	width:130px;
+}
+.cwidth {
+	width:110px;
+}
+
+.cancel {
+	font-weight: normal;
+	color:black;
+}
+.black{
+	color:black;
+}
+.brown{
+	color:brown;
+}
+.marginauto, .bcenter{
+	margin: auto;
+}
+.maroon{
+	color:maroon;
+	display:none;
+	width:auto;
+}
+.mcolor{
+	color:maroon;
+}
+xmp{
+	margin-top:-5px;
+}
+.size {
+	font-size: 16px
+}
+
+#name{
+	width:40px;
+}
+
+.rtsplit {
+	float:right;
+	width:250px;
+	display:inline-block;
+}
+
+.lftsplit{
+	border-right:2px solid black;
+	width:340px;
+	display:inline-block;
+}
+
+.width{
+width:250px;
+}
+
+img { 
+	pointer-events: none; 
+}
+
+.hide {
+    display:none;
+    color:maroon;
+    width:auto;
+}
+
+.shide {
+    display:none;
+    color:#828282;
+    width:auto;
+}
+
+.center {
+	text-align: center;
+}
+.htmlref{
+	line-height: 1.8;
+}
+.clickable {
+	font-size: 105%;
+}
+.hover:hover {
+	font-size: 105%;
+	color:red;
+}
+.display{
+	border:2px solid orange;
+	
+	display: inline-block;
+	padding:20px;
+}
+
+.table{
+	border-collapse:separate;
+    border-spacing:15px 15px;
+}
+
+.clickable:hover{
+	font-weight: bold;
+}
+.flexbox{
+	display: flex;
+	box-orient: horizontal;
+}
+.flexchild{
+	width:310px;
+}
+.hrline{
+	width:70%;
+	margin-right: 30%;
+}
+.jsik{
+	height:75px;
+	width:550px;
+	border-radius: 20px;
+	font-size: 2em;
+	color: white;
+	background-color: black;
+}
+
+.btnclick{
+	height:45px;
+	width:100px;
+	border-radius: 15px;
+	font-size: 1em;
+	
+
+}
+code{
+	 font-size:1.15em;
+}
+
+
+/*monokai Sublimetext color codes */
+.value{
+	color:#CC6600;
+}
+
+.white{
+	color:white;
+}
+.lblue{
+	color:#007ACC;
+}
+.underline{
+	text-decoration: underline;
+}
+.rside{
+	float:right;
+	width:60%;
+	margin-top: -17px;
+}
+.lside{
+	width:40%;
+}
+.cfloat{
+	clear:both;
+}

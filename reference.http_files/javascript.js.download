@@ -1,0 +1,122 @@
+function toggle_visibility(id){
+    var e = document.getElementById(id);
+    if(e.style.display == 'table'){
+         e.style.display = 'none';
+    }else{
+        e.style.display = 'table';
+        e.style.border = '1px solid black';
+        e.style.padding = '10px';
+        e.style.marginTop = '10px';
+        e.style.marginLeft = '10px';
+        e.style.marginRight = '10px';
+        //e.style.marginBottom = '5px';
+    }
+}
+
+function image(){
+    var myImg = document.getElementsByClassName("image")
+    for(var i = 0; i< myImg.length; i++){
+        var realWidth = myImg[i].naturalWidth;
+        if(realWidth > 625){
+            myImg[i].style.width = "625px";
+        }
+    }
+}
+
+function toggle_image(id){
+    var e = document.getElementById(id);
+    if(e.style.display == 'inline-block'){
+         e.style.display = 'none';
+    }else{
+        e.style.display = 'inline-block';
+        e.style.border = '1px solid black';
+        e.style.padding = '10px';
+        e.style.marginTop = '10px';
+        e.style.marginLeft = '-50px';
+        e.style.marginRight = '0px';
+        //e.style.marginBottom = '5px';
+    }
+}
+
+function side_visibility(id) {
+            var e = document.getElementById(id);
+        if(e.style.display == 'inline'){
+             e.style.display = 'none';
+        }else{
+            e.style.display = 'inline';
+            e.style.border = '';
+            e.style.padding = '10px';
+            e.style.marginTop = '10px';
+            e.style.marginLeft = '0px';
+            e.style.marginRight = '0px';
+            e.style.width = '300px';
+
+            //e.style.marginBottom = '5px';
+            }
+        }
+
+
+function popupv(url,id) {
+        newwindow2 = window.open('','name','height=600,width=650');
+        var tmp = newwindow2.document;
+        tmp.write('<html><head><style>video{width: 100%;height: auto;max-height: 100%;}.videoContainer{position:absolute;height:100%;width:100%;overflow: hidden;}.videoContainer video{min-width: 100%;min-height: 100%;}</style><title>popup</title>');
+        //tmp.write('</head><body><video width="560" height="315" controls><source src="https://s3-us-west-2.amazonaws.com/simplycoding/JavaScriptPlatform/1.3.mp4" type="video/mp4"></video>');
+        tmp.write('</head><body><div class="videoContainer"><video width="560" height="315" controls><source src='+url+' type="video/mp4"></video></div>');
+        tmp.write('</body></html>');
+        tmp.close();
+
+        var e = document.getElementById(id);
+        e.style.display = 'none';
+        
+    }
+
+var num = 0;
+function clack(){
+    if(num == 0){
+        var click = document.getElementById("click");
+        click.innerHTML = 'CLICK ME - Thanks click again!';
+        click.style.color = 'red';
+        click.style.border='none';
+        click.style.backgroundColor='white';
+        num = 1;
+    } else if (num==1){
+        var click = document.getElementById("click");
+        click.innerHTML = 'CLICK ME - Very Good, you are doing wonderfully!';
+        click.style.color = 'blue';
+        click.style.border='2px solid green';
+        num = 2;
+    }else if(num==2){
+        var click = document.getElementById("click");
+        click.innerHTML = 'CLICK ME - How many of these do you think there are?';
+        click.style.color = 'white';
+        click.style.border='2px solid pink';
+        click.style.backgroundColor='black';
+        num = 3;
+    } else if(num==3){
+        var click = document.getElementById("click");
+        click.innerHTML = 'CLICK ME - Only one more! All this done with one function';
+        click.style.color = 'purple';
+        click.style.border='2px dashed red';
+        click.style.backgroundColor='white';
+        num=4;
+    } else if(num=4){
+        var click = document.getElementById("click");
+        click.innerHTML = 'CLICK ME - I call a function when you do!';
+        click.style.color = 'pink';
+        click.style.border='2px dotted orange';
+        click.style.backgroundColor='blue';
+        num=0;
+    }
+
+
+}
+
+function ran(){
+
+    document.getElementById("a").innerHTML = Math.random();
+}
+
+function ran1(){
+
+    document.getElementById("b").innerHTML = Math.floor(Math.random() * 100);
+}
